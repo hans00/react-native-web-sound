@@ -48,7 +48,7 @@ Sound.prototype.pause = function() {
 }
 
 Sound.prototype.stop = function() {
-  this.source.stop(0)
+  if (this.isPlaying()) this.source.stop(0)
   this.currentPlaybackPosition = 0
   return this
 }
